@@ -1,5 +1,9 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import clsx from "clsx";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+
 import "./globals.css";
 
 const poppins = Poppins({
@@ -19,7 +23,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={clsx(poppins.className, "bg-light,text-dark")}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
